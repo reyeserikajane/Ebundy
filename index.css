@@ -1,0 +1,181 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 10px;
+  flex-direction: column;
+  background-color: black;
+  overflow: hidden;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-xl: 1.25rem;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gray: #7d7d7d;
+  --color-whitesmoke: #f2f0f2;
+
+  /* Paddings */
+  --padding-xl: 1rem;
+  --padding-81xl: 6rem;
+
+  /* border radiuses */
+  --br-3xs: 10px;
+}
+
+.icon {
+  align-items: center;
+  padding: 0.5rem;
+} 
+
+.card {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+
+.time {
+  margin: 0;
+  position: relative;
+  font-size: 8rem;
+  font-weight: 700;
+}
+
+.day {
+  position: relative;
+  font-size: 1.20rem;
+  font-weight: 500;
+  color: var(--color-whitesmoke);
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.63rem;
+}
+
+.clock-out {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.box,
+.clock-out-button {
+  align-self: stretch;
+  display: flex;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.clock-out-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0.94rem 0;
+  background-color: #95cd60;
+  border-radius: 1rem;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.box {
+  border-radius: var(--br-3xs) var(--br-3xs) 0 0;
+  background-color: #6dbbad;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 3rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3.13rem;
+}
+
+.clock-in-time1 {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+}
+
+.clock-in-time {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.view-time-records {
+  flex: 1;
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.view-time-records-button {
+  cursor: pointer;
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-whitesmoke);
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.box1,
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.box1 {
+  align-self: stretch;
+  border-radius: 0 0 var(--br-3xs) var(--br-3xs);
+  background-color: var(--color-white);
+  padding: 3rem;
+  gap: 1.88rem;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+}
+
+@media only screen and (min-width: 350px) and (max-width: 500px){
+  .time {font-size: 4rem}
+
+}
+@media only screen and (max-width: 360px) {
+  .time {font-size: 2rem}
+  .view-time-records {font-size: 1rem}
+  .clock-out {font-size: 1rem}
+  .day {font-size: 1rem}
+  .clock-in-time1 {font-size: 1rem}
+}
