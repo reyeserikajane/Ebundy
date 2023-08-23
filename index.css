@@ -1,47 +1,74 @@
-
 * {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 10px;
-  flex-direction: column;
-  background-color: black;
-  overflow: hidden;
+  font-size: 1.6rem;
+}
+
+button:disabled {
+  cursor: not-allowed !important;
 }
 
 :root {
   /* fonts */
-  --font-inter: Inter;
+  --font-inter: "Inter", sans-serif;
 
   /* font sizes */
-  --font-size-xl: 1.25rem;
 
   /* Colors */
   --color-white: #fff;
   --color-gray: #7d7d7d;
   --color-whitesmoke: #f2f0f2;
 
-  /* Paddings */
-  --padding-xl: 1rem;
-  --padding-81xl: 6rem;
-
   /* border radiuses */
-  --br-3xs: 10px;
+  --br-3xs: 1rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    minmax(6rem, 1fr) [center-start] minmax(min-content, 130rem)
+    [center-end] minmax(6rem, 1fr);
+  max-height: 100vh;
+}
+
+.main {
+  grid-column: center-start / center-end;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-employee-id {
+  align-self: flex-start;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 0.5rem;
 }
 
 .icon {
   align-items: center;
   padding: 0.5rem;
-} 
+}
 
 .card {
   position: relative;
-  width: 100%;
+  max-width: 62rem;
   text-align: center;
   color: var(--color-white);
   font-family: var(--font-inter);
@@ -50,13 +77,13 @@ body {
 .time {
   margin: 0;
   position: relative;
-  font-size: 8rem;
+  font-size: 9.6rem;
   font-weight: 700;
 }
 
 .day {
   position: relative;
-  font-size: 1.20rem;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-whitesmoke);
 }
@@ -69,28 +96,25 @@ body {
   gap: 0.63rem;
 }
 
-.clock-out {
-  flex: 1;
-  position: relative;
-  font-size: var(--font-size-xl);
-  font-weight: 500;
-  font-family: var(--font-inter);
-  color: var(--color-white);
-  text-align: center;
-}
-
 .box,
 .clock-out-button {
+  font-size: 2rem;
   align-self: stretch;
   display: flex;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  flex: 1;
+  position: relative;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  color: var(--color-white);
+  text-align: center;
+  padding: 0.5rem 1rem;
 }
 
 .clock-out-button {
   cursor: pointer;
   border: 0;
-  padding: 0.94rem 0;
   background-color: #95cd60;
   border-radius: 1rem;
   flex-direction: row;
@@ -116,6 +140,7 @@ body {
 }
 
 .clock-in-time {
+  font-size: 2rem;
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -123,31 +148,24 @@ body {
   justify-content: center;
 }
 
-.view-time-records {
+.view-time-records-button {
+  font-size: 2rem;
   flex: 1;
   position: relative;
-  font-size: 1.25rem;
   font-weight: 500;
   font-family: var(--font-inter);
   color: var(--color-gray);
   text-align: center;
-  align-items: center;
   display: flex;
   justify-content: center;
-}
+  align-items: center;
 
-.view-time-records-button {
   cursor: pointer;
   border: 1px solid var(--color-gray);
   background-color: var(--color-whitesmoke);
   align-self: stretch;
   border-radius: var(--br-3xs);
-  padding-right: 15px;
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 0.5rem 2rem;
 }
 
 .box1,
@@ -168,14 +186,120 @@ body {
   color: var(--color-gray);
 }
 
-@media only screen and (min-width: 350px) and (max-width: 500px){
-  .time {font-size: 4rem}
-
+@media only screen and (min-width: 350px) and (max-width: 500px) {
+  .time {
+    font-size: 4rem;
+  }
 }
 @media only screen and (max-width: 360px) {
-  .time {font-size: 2rem}
-  .view-time-records {font-size: 1rem}
-  .clock-out {font-size: 1rem}
-  .day {font-size: 1rem}
-  .clock-in-time1 {font-size: 1rem}
+  .time {
+    font-size: 2rem;
+  }
+  .view-time-records {
+    font-size: 1rem;
+  }
+  .clock-out {
+    font-size: 1rem;
+  }
+  .day {
+    font-size: 1rem;
+  }
+  .clock-in-time1 {
+    font-size: 1rem;
+  }
+}
+
+.table {
+  grid-column: center-start / center-end;
+}
+
+#myTable {
+  font-family: var(--font-inter) !important;
+  font-size: 1.6rem;
+  color: #333;
+  padding: 1rem 0;
+}
+
+#myTable_wrapper {
+  font-family: var(--font-inter) !important;
+  font-size: 1.6rem !important;
+}
+
+#myTable thead {
+  background-color: #6dbbad;
+  color: #fff;
+}
+
+/* #myTable tbody {
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  overflow-y: auto;
+} */
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+
+  display: none; /* Hide the modal by default */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  overflow-y: auto;
+
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 70%;
+  max-height: 90vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.2s ease-out;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.attendance {
+  color: #fff;
+  /* font-weight: 700; */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.attendance--1 {
+  background-color: #4caf50;
+}
+
+.attendance--2 {
+  background-color: #ff5722;
+}
+
+/* Clock in background color */
+.clock-in-bg {
+  background-color: #4caf50;
+}
+
+/* Clock out background color */
+.clock-out-bg {
+  background-color: #ff5722;
 }
